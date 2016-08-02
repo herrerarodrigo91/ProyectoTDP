@@ -7,6 +7,7 @@ public class AdminAction extends ActionSupport {
     private String user;
     private String password;
     
+    
     @Override
     public String execute(){
         return SUCCESS;
