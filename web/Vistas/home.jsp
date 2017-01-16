@@ -11,28 +11,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>TDP 2016</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>PROYECTO TECNOLOGIA DE PROGRAMACION 2016</h1>
         <s:form action="admin" theme="simple">
-            <s:textfield name="user" placeholder="user"/>
+            <s:textfield name="user" placeholder="admin"/>
             <s:password name="password" placeholder="password"/>
             <s:submit value="log"/>
         </s:form>
         
-        <s:iterator value="cl">
-            <s:form action="info" theme="simple">
+        <s:iterator value="ce">
+            <s:form action="io" theme="simple">
                     <s:property value="nombre"/>
+                    imagen: <img src="<s:property value="nombreImagen"/>"/>
+                    <s:hidden name="idBean" value="%{id}"/>
+                    <button type="submit" value="ver" name="boton"  >ver</button>
                     
-                    <s:hidden name="apellidoBean" value="%{apellido}"/>
-                    <s:submit value="ver"/>
                     <hr>
                 </s:form>
         </s:iterator>
-                
-        
-        
-        
+       
     </body>
 </html>

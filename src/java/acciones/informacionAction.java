@@ -5,28 +5,16 @@
  */
 package acciones;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 /**
  *
  * @author Rodrigo
  */
-public class InfoAction extends ActionSupport {
+public class informacionAction extends IOAction {
     
-    private String apellidoBean;
     @Override
     public String execute(){
+        System.out.println("se ejecuto execute de InformacionAction");
         return SUCCESS;
     }
-
-    public String getApellidoBean() {
-        return apellidoBean;
-    }
-
-    public void setApellidoBean(String apellidoBean) {
-        this.apellidoBean = apellidoBean;
-    }
-    
-    
     
 }

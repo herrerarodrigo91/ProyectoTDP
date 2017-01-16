@@ -10,17 +10,79 @@
     
     <package name="acciones" namespace="/" extends="struts-default">
         
-        <action name="home" class="acciones.HomeAction" method="execute">
-            <result name="success">Vistas/home.jsp</result>
-        </action>
+                <action name="home" class="acciones.HomeAction" method="execute">
+                    <result name="success">Vistas/home.jsp</result>
+                </action>
+                
+
+                <action name="io" class="acciones.IOAction" method="execute">
+                    <result name="verEntidadResult">Vistas/infoEntidad.jsp</result>
+                    <result name="eliminarEntidadResult" type="redirectAction">
+                        <param name="actionName">admin</param>
+                    </result>
+                    <result name="editarEntidadResult">Vistas/editarEntidad.jsp</result>
+                    
+                    <result name="success">Vistas/editarEntidad.jsp</result>
+                </action>
+
+
+
+                <action name="admin" class="acciones.AdminAction" method="execute">
+                    <result name="success">Vistas/administrador.jsp</result>
+                    <result name="error" type="redirectAction">
+                        <param name="actionName">home</param>
+                    </result>
+                </action>
+
+
+                <action name="logout" class="acciones.AdminAction" method="logout">
+                    <result name="success" type="redirectAction">
+                        <param name="actionName">home</param>
+                    </result>
+                </action>
+
+
+                <action name="cargar" class="acciones.CargarAction" method="execute">
+                    <interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+                    <result name="success">Vistas/crearEntidad.jsp</result>
+                    <result name="input">Vistas/crearEntidad.jsp</result>
+                    
+                </action>
+
+                <action name="vistaCrearEntidad" class="acciones.AdminAction" method="mostrarVistaCrearPartido">
+                    <result name="success">Vistas/crearEntidad.jsp</result>
+                </action>
+                <action name="agregarImagen" class="acciones.AdminAction" method="mostrarVistaAgregarImagen">
+                    <result name="success">Vistas/UserImage.jsp</result>
+                </action>
+                
+                <action name="editar" class="acciones.EditarAction" method="execute">
+                    <result name="success">Vistas/editarEntidad.jsp</result>
+                </action>
+                
+                <action name="userImage"
+			class="acciones.FileUploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">Vistas/SuccessUserImage.jsp</result>
+			<result name="input">Vistas/UserImage.jsp</result>
+		</action>
+                
+                
+                
         
-        <action name="info" class="acciones.InfoAction" method="execute">
-            <result name="success">Vistas/infoPartido.jsp</result>
-        </action>
         
-        <action name="admin" class="acciones.AdminAction" method="execute">
-            <result name="success">Vistas/administrador.jsp</result>
-        </action>
         
     </package>
 </struts>

@@ -13,8 +13,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>estas en la informacion del partido seleccionado!</h1>
-        <s:property value="apellidoBean"/>
+        <h1>estas en la informacion de la entidad seleccionad!</h1>
+        <p><s:property value="idBean"/></p>
+        <p><s:property value="nombre"/></p>
+        <p><s:property value="calificacion"/></p>
+        <p><s:property value="descripcion"/></p>
+        
+        
         
     </body>
 </html>
