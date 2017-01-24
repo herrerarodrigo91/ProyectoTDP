@@ -23,13 +23,13 @@ public class EditarAction extends ActionSupport{
         System.out.println("se ejecuto execute de EditarAction");
         cont=new Controlador();
         int idEditar=Integer.parseInt(idBean);
-        cont.remove(idEditar);
-        Entidad ent=new Entidad();
-        
+//        cont.remove(idEditar);
+//        Entidad ent=new Entidad();
+        Entidad ent = cont.getEntidad(idEditar);
         ent.setNombre(nuevoNombre);
         ent.setCalificacion(Integer.parseInt(nuevaCalificacion));
         ent.setDescripcion(nuevaDescripcion);
-        cont.agregarEntidad(ent);
+//        cont.agregarEntidad(ent);
         return SUCCESS;
     }
 
