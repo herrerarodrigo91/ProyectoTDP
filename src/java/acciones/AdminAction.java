@@ -20,14 +20,14 @@ public class AdminAction extends ActionSupport {
     public String execute(){
         System.out.println("se ejecuto execute de AdminAction");
         cont=new Controlador();
-        if(ActionContext.getContext().getSession().containsKey("log")){
+        if(ActionContext.getContext().getSession().containsKey("logeado")){
             ce=cont.entidades();
             return SUCCESS;
         }
         else{
                 if("admin".equals(user) && "password".equals(password)){
                 Map session=ActionContext.getContext().getSession();
-                session.put("log",true);
+                session.put("logeado",true);
                ce=cont.entidades();
                 return SUCCESS;
                }
@@ -40,7 +40,7 @@ public class AdminAction extends ActionSupport {
     public String logout()throws Exception{
         System.out.println("se ejecuto logoutde AdminAction");
         Map session=ActionContext.getContext().getSession();
-        session.remove("log");
+        session.remove("logeado");
         return SUCCESS;
     }
     
@@ -82,6 +82,10 @@ public class AdminAction extends ActionSupport {
     public void setCe(Collection<Entidad> ce) {
         System.out.println("se ejecuto setCe de AdminAction");
         this.ce = ce;
+    }
+    
+    public String atras(){
+        return SUCCESS;
     }
     
   
