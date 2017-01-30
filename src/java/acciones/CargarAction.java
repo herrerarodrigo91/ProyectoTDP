@@ -21,7 +21,10 @@ public class CargarAction extends ActionSupport implements ServletRequestAware {
     private String imagenFileName;
     private HttpServletRequest servletRequest;
     
+    private boolean mostrarInfoImagen=false;
+    private boolean mostrarVideo=false;
     private Controlador cont;
+    private String video;
     
     
     @Override
@@ -33,6 +36,8 @@ public class CargarAction extends ActionSupport implements ServletRequestAware {
         ent.setNombre(nombre);
         ent.setCalificacion(Integer.parseInt(calificacion));
         ent.setDescripcion(descripcion);
+        ent.setNombreVideo(video);
+        System.out.println("el nombre del video queda como:$$$$$$$$$$$$$$$$$$$$$"+video);
         
         try{
             String direccionImagen = servletRequest.getSession().getServletContext().getRealPath("/");
@@ -47,15 +52,20 @@ public class CargarAction extends ActionSupport implements ServletRequestAware {
             //hace imagen= new File ...
             String direccionImagen = servletRequest.getSession().getServletContext().getRealPath("/");
             imagen= new File(direccionImagen , "EmptyImage.tmp");
-            ent.setNombreImagen(imagen.getName());
+            ent.setNombreImagen(imagen.getName());  
             cont.agregarEntidad(ent);
-            
+            mostrarInfoImagen=true;
+            System.out.println("el nombre del video queda como:$$$$$$$$$$$$$$$$$$$$$"+video);
+
             return INPUT;
              
         }
+        mostrarInfoImagen=true;
         ent.setNombreImagen(imagen.getName());
         cont.agregarEntidad(ent);
+        System.out.println("el nombre vacio de la descripcion es:###########"+descripcion);
         return SUCCESS;
+        
     }
    
 
@@ -120,6 +130,33 @@ public class CargarAction extends ActionSupport implements ServletRequestAware {
     public String getNombreImagen(){
         return imagen.getName();
     }
+
+    public boolean getMostrarInfoImagen() {
+        return mostrarInfoImagen;
+    }
+
+    public String getVideo() {
+        
+        return video;
+    }
+
+    public void setVideo(String video) {
+        
+        if(!video.equals("")&&(video.contains("https://www.youtube.com/"))){
+              //mostrarVideo=true;
+            this.video=video.replace("watch?v=","embed/");            
+        }else{this.video ="";}
+        
+    }
+
+    public boolean isMostrarVideo() {
+        return mostrarVideo;
+    }
+    
+    
+    
+    
+    
     
     
  
