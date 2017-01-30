@@ -10,17 +10,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>TDP 2016</title>
     </head>
     <body>
         <h1>vista de editar partido</h1>
-        <s:form action="editar" theme="simple">
+        <s:a action="admin">atras</s:a>
+        <s:form action="editar" enctype="multipart/form-data">
             
             <s:hidden name="idBean" value="%{idBean}"/>
-            <s:textfield name="nuevoNombre" value="%{nombre}"/>
-            <s:textfield name="nuevaCalificacion" value="%{calificacion}"/>
-            <s:textfield name="nuevaDescripcion" value="%{descripcion}"/>
-            <s:submit value="aceptar"/>
+            <s:textfield name="nuevoNombre" label="Nombre" value="%{nombre}" required="true"/>
+            <s:textfield name="nuevaCalificacion" label="Calificacion" value="%{calificacion}" required="true" type="number" max="10" min="0"/>
+            <s:textarea name="nuevaDescripcion" label="Descripcion" value="%{descripcion}" cols="50" rows="10"/>
+            <s:file name="nuevaImagen" label="imagen" />
+            <s:textfield name="nuevoVideo" label="video YoutTube" value="%{video}"/>
+            <s:submit value="aceptar"/><br>
         </s:form>
     </body>
 </html>
