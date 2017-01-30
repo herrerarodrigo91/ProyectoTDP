@@ -24,6 +24,8 @@
                     
                     <result name="success">Vistas/editarEntidad.jsp</result>
                 </action>
+                
+                
 
 
 
@@ -36,6 +38,12 @@
 
 
                 <action name="logout" class="acciones.AdminAction" method="logout">
+                    <result name="success" type="redirectAction">
+                        <param name="actionName">home</param>
+                    </result>
+                </action>
+                
+                <action name="atrasModAdmin" class="acciones.AdminAction" method="atras">
                     <result name="success" type="redirectAction">
                         <param name="actionName">home</param>
                     </result>
@@ -63,21 +71,23 @@
                 </action>
                 
                 <action name="editar" class="acciones.EditarAction" method="execute">
-                    <result name="success">Vistas/editarEntidad.jsp</result>
-                </action>
-                
-                <action name="userImage"
-			class="acciones.FileUploadAction">
-			<interceptor-ref name="fileUpload">
+                    <interceptor-ref name="fileUpload">
 				<param name="maximumSize">2097152</param>
 				<param name="allowedTypes">
 					image/png,image/gif,image/jpeg,image/pjpeg
 				</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success">Vistas/SuccessUserImage.jsp</result>
-			<result name="input">Vistas/UserImage.jsp</result>
-		</action>
+			<result name="success" type="redirectAction">
+                        <param name="actionName">admin</param>
+                    </result>
+			<result name="input" type="redirectAction">
+                        <param name="actionName">admin</param>
+                    </result>
+                    
+                </action>
+                
+                
                 
                 
                 

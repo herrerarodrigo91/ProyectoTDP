@@ -1,5 +1,6 @@
 package acciones;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import modelos.BancoEntidades;
 import modelos.Controlador;
@@ -10,10 +11,12 @@ public class IOAction extends ActionSupport {
     private String idBean;
     private String nombre;
     private String calificacion;
-    // iria la imagen
+    private String imagen;
     private String descripcion;
     private String boton;
     private Controlador cont;
+    private boolean modoAdmin;
+    private String video;
     
 //    public IOAction(){
 //        cont=new Controlador();
@@ -23,7 +26,7 @@ public class IOAction extends ActionSupport {
     public String execute(){
         System.out.println("se ejecuto execute de IOAction");
         cont=new Controlador();
-        if("ver".equals(boton)){
+        if("verEntidad".equals(boton)){
             llenarVer(Integer.parseInt(idBean));
             return "verEntidadResult";
         }
@@ -35,7 +38,7 @@ public class IOAction extends ActionSupport {
             llenarVer(Integer.parseInt(idBean));
             return "editarEntidadResult";
         }
-        
+        modoAdmin=(ActionContext.getContext().getSession().containsKey("logeado"));
         return SUCCESS;
     }
     
@@ -44,8 +47,9 @@ public class IOAction extends ActionSupport {
         Entidad ent=cont.getEntidad(id);
         nombre=ent.getNombre();
         calificacion=ent.getCalificacion()+"";
-        //imagen
+        imagen=ent.getNombreImagen();
         descripcion=ent.getDescripcion();
+        video=ent.getNombreVideo();
         
     }
 
@@ -89,6 +93,24 @@ public class IOAction extends ActionSupport {
         this.descripcion = descripcion;
     }
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+    
+    
+
    
     
     
@@ -104,6 +126,24 @@ public class IOAction extends ActionSupport {
         System.out.println("se ejecuto setIdBean de IOAction");
         this.idBean = idBean;
     }
+
+    public boolean isModoAdmin() {
+        return modoAdmin;
+    }
+
+    public void setModoAdmin(boolean modoAdmin) {
+        this.modoAdmin = modoAdmin;
+    }
+    
+//    public String regresar(){
+//        if(modoAdmin){
+//            return "atrasuser";
+//        }else{
+//            ActionContext.getContext().getActionInvocation()
+//        }
+//    }
+    
+    
  
     
     

@@ -2,10 +2,12 @@
 package acciones;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ActionContext;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import modelos.*;
 
 public class HomeAction extends ActionSupport {
@@ -13,6 +15,7 @@ public class HomeAction extends ActionSupport {
     //private BancoEntidades be;
     private Collection<Entidad> ce;
     private Controlador cont;
+    private boolean modoAdmin;
      
 //    public HomeAction(){
 //        
@@ -23,28 +26,14 @@ public class HomeAction extends ActionSupport {
         System.out.println("se ejecuto execute de HomeAction");
         cont=new Controlador();
         ce=cont.entidades();
+        modoAdmin=(ActionContext.getContext().getSession().containsKey("logeado"));
+        
+        System.out.println("Modo admin da como resultado:    "+modoAdmin);
+        System.out.println("la llave log da como resultado:   "+ActionContext.getContext().getSession().get("log"));
         return SUCCESS;
     }
 
-//    public Iterator<Entidad> getIe() {
-//        System.out.println("se ejecuto getIe de HomeAction");
-//        return ie;
-//    }
 
-//    public void setIe(Iterator<Entidad> ie) {
-//        System.out.println("se ejecuto setIe de HomeAction");
-//        this.ie = ie;
-//    }
-//
-//    public BancoEntidades getBe() {
-//        System.out.println("se ejecuto getBe de HomeAction");
-//        return be;
-//    }
-//
-//    public void setBe(BancoEntidades be) {
-//        System.out.println("se ejecuto setBe de HomeAction");
-//        this.be = be;
-//    }
 
     public Collection<Entidad> getCe() {
         System.out.println("se ejecuto getCe de HomeAction");
@@ -55,6 +44,18 @@ public class HomeAction extends ActionSupport {
         System.out.println("se ejecuto setCe de HomeAction");
         this.ce = ce;
     }
+
+    public boolean isModoAdmin() {
+        return modoAdmin;
+    }
+
+    public void setModoAdmin(boolean modoAdmin) {
+        this.modoAdmin = modoAdmin;
+    }
+
+   
+    
+    
 
   
     

@@ -14,11 +14,14 @@
     </head>
     <body>
         <h1>estas en la informacion de la entidad seleccionad!</h1>
+        <a href="javascript:history.go(-1)">Atrás </a>
+        
         <p><s:property value="idBean"/></p>
         <p><s:property value="nombre"/></p>
         <p><s:property value="calificacion"/></p>
         <p><s:property value="descripcion"/></p>
-        
+        imagen: <img src="<s:property value="imagen"/>" width="150px" height="150px"  />
+        <iframe width="560" height="315" src="<s:property value="video"/>" frameborder="0" allowfullscreen></iframe>
         
         
     </body>

@@ -14,6 +14,7 @@ public class Entidad implements Serializable{
     private int calificacion;
     private String nombreImagen;
     private String descripcion;
+    private String nombreVideo;
 
     public int getId() {
         return id;
@@ -60,6 +61,16 @@ public class Entidad implements Serializable{
         }
         
     }
+
+    public String getNombreVideo() {
+        return nombreVideo;
+    }
+
+    public void setNombreVideo(String nombreVideo) {
+        this.nombreVideo = nombreVideo;
+    }
+    
+    
     
     
     

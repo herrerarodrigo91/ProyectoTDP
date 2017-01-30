@@ -15,18 +15,24 @@
     </head>
     <body>
         <h1>PROYECTO TECNOLOGIA DE PROGRAMACION 2016</h1>
-        <s:form action="admin" theme="simple">
-            <s:textfield name="user" placeholder="admin"/>
-            <s:password name="password" placeholder="password"/>
-            <s:submit value="log"/>
-        </s:form>
-        
+        <s:if test="modoAdmin">
+            modo administrador
+            <s:a action="admin">entrar</s:a>
+            <s:a action="logout">salir</s:a>
+        </s:if>
+        <s:else>
+            <s:form action="admin" theme="simple">
+            <s:textfield name="user" placeholder="admin" required="true"/>
+            <s:password name="password" placeholder="password" required="true"/>
+            <s:submit value="atroden"/>
+            </s:form>
+        </s:else>
         <s:iterator value="ce">
             <s:form action="io" theme="simple">
                     <s:property value="nombre"/>
-                    imagen: <img src="<s:property value="nombreImagen"/>"/>
+                    imagen: <img src="<s:property value="nombreImagen"/>" width="250px" height="200px"/>
                     <s:hidden name="idBean" value="%{id}"/>
-                    <button type="submit" value="ver" name="boton"  >ver</button>
+                    <button type="submit" value="verEntidad" name="boton"  >ver</button>
                     
                     <hr>
                 </s:form>

@@ -14,13 +14,17 @@ import org.apache.struts2.ServletActionContext;
  */
 public class Controlador {
     private BancoEntidades bancoEnt;
-    private String direccion=ServletActionContext.getServletContext().getRealPath("/datosProyectoTDP.txt");
+    private String direccion=ServletActionContext.getServletContext().getRealPath("/")+"datosProyectoTDP.txt";
     
     public Controlador(){
         bancoEnt=Serializer.read(direccion);
         if(bancoEnt==null){
             bancoEnt=BancoEntidades.getInstance();
         }
+        Serializer.write(bancoEnt, direccion);
+    }
+    
+    public void actualizar(){
         Serializer.write(bancoEnt, direccion);
     }
     

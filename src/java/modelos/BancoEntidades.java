@@ -6,6 +6,7 @@
 package modelos;
 
 
+import java.io.File;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.Iterator;
@@ -59,6 +60,17 @@ public class BancoEntidades implements Serializable{
         
         Entidad entidadBorrar=entidadesMap.get(id);
         System.out.println("se borro la entidad de nombre:"+entidadBorrar.getNombre());
+        
+        String direccion=ServletActionContext.getServletContext().getRealPath("/");
+        String nombreImagen=entidadBorrar.getNombreImagen();
+        File imagenBorrar = new File(direccion , nombreImagen);
+        
+        if(!nombreImagen.equals("EmptyImage.tmp")){
+            imagenBorrar.delete();
+        }
+        
+        
+        
         
         entidadesMap.remove(id);
     }
