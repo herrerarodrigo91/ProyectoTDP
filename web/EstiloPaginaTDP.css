@@ -4,9 +4,13 @@
 
 body{ 
     background-image:  url("fondo1.jpg"); 
+    
     background-color:black;
 }
 
+.divForm{
+    float: right;
+}
 .form-style-1 {
     margin:10px auto;
     max-width: 400px;
@@ -108,8 +112,13 @@ select{
 
 .container {
    
-  width: 200px;
-  height: 200px;
+  width: 950px;
+height: 950px;
+top: 111px ; 
+    
+    
+    
+ 
   position: relative;
   left: 0;
   right: 0;
@@ -183,9 +192,10 @@ ul{
 }
 
 ul li{
-    margin:2px 2px 2px 2px; 
+    margin:2px 15px -15px 2px;
     float: left; 
-width: 20%;
+width: 23%;
+
     
 
 }

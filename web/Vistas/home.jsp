@@ -23,13 +23,15 @@
             <s:a action="logout">salir</s:a>
         </s:if>
         <s:else>
+            <div class="divForm">
             <s:form action="admin" theme="simple" cssClass="form-style-1">
             <s:textfield name="user" placeholder="admin" required="true"/>
             <s:password name="password" placeholder="password" required="true"/>
             <s:submit value="atroden"/>
             </s:form>
+            </div>     
         </s:else>
-            <div class="container" style=" width:1300px ; height:1200px ">
+            <div class="container">
         <ul>    
             
         <s:iterator value="ce">
