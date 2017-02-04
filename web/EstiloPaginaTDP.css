@@ -2,7 +2,11 @@
 
 
 
-body{  background-image:  url("fondo1.gif"); }
+body{ 
+    background-image:  url("fondo1.jpg"); 
+    background-color:black;
+}
+
 .form-style-1 {
     margin:10px auto;
     max-width: 400px;
@@ -174,7 +178,9 @@ select{
 
 
 
-
+ul{
+    list-style-type: none;
+}
 
 ul li{
     margin:2px 2px 2px 2px; 
