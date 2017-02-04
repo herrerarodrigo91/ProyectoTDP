@@ -13,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>TDP 2016</title>
         <link rel="stylesheet" href="EstiloPaginaTDP.css"/>
+        
     </head>
     <body>
         <h1>PROYECTO TECNOLOGIA DE PROGRAMACION 2016</h1>
@@ -28,35 +29,31 @@
             <s:submit value="atroden"/>
             </s:form>
         </s:else>
+            <div class="container" style=" width:1300px ; height:1200px ">
+        <ul>    
+            
         <s:iterator value="ce">
             
-                    <ul>
+                    
                         <li>
-                            <div class="container">
-                                <s:form action="io" theme="simple"> 
+                            
+                                <s:form action="io" theme="simple" > 
                                     <div class="div-img">
                                         <img class="img" src="<s:property value="nombreImagen"/>" width="250px" height="200px"/>
                                             <div class="text">
                                                 <s:property value="nombre"/>
-                                                <button type="submit" value="verEntidad" name="boton"  >ver</button>
+                                                <button class="ver" type="submit" value="verEntidad" name="boton"   >ver</button>
+                                                <s:hidden name="idBean" value="%{id}"/>
                                             </div>
                                     </div> 
                                 </s:form>
-                            </div>
+                                
+                           
                         </li>
-                    </ul>
 
-                            
-
-
-
-
-                        <s:hidden name="idBean" value="%{id}"/>
-                        
-
-                        
-                
         </s:iterator>
-       
+                         
+       </ul>
+                </div>
     </body>
 </html>

@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 
+
+body{  background-image:  url("fondo1.gif"); }
 .form-style-1 {
     margin:10px auto;
     max-width: 400px;
@@ -72,14 +74,14 @@ select{
 .form-style-1 .field-textarea{
     height: 100px;
 }
-.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+.form-style-1 input[type=submit], .form-style-1 input[type=button],.div-img .ver{
     background: #4B99AD;
     padding: 8px 15px 8px 15px;
     border: none;
     color: #fff;
     
 }
-.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button], .div-img .ver:hover{
     background: #4691A4;
     box-shadow:none;
     -moz-box-shadow:none;
@@ -99,14 +101,17 @@ select{
 
 
 
+
 .container {
+   
   width: 200px;
   height: 200px;
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 20px;
+  top: 50px;
+
 }
 .div-img {
   display: block;
@@ -155,4 +160,26 @@ select{
 .div-img:hover .text {
   transform: translate(0px, -20px);
   opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul li{
+    margin:2px 2px 2px 2px; 
+    float: left; 
+width: 20%;
+    
+
 }
