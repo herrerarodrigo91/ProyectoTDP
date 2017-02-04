@@ -10,6 +10,7 @@ body{
 
 .divForm{
     float: right;
+
 }
 .form-style-1 {
     margin:10px auto;
@@ -17,6 +18,13 @@ body{
     padding: 20px 12px 10px 20px;
     font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     display: inline;
+    
+        padding-left: 452px;
+padding-right: 28px;
+border-right-width: 0px;
+border-right-style: solid;
+margin-right: 52px;
+padding-bottom: 0px;
 }
 .form-style-1 li {
     padding: 0;
@@ -189,12 +197,16 @@ top: 111px ;
 
 ul{
     list-style-type: none;
+    padding-left: 40px;
+padding-right: 40px;
 }
 
 ul li{
     margin:2px 15px -15px 2px;
     float: left; 
 width: 23%;
+
+
 
     
 
