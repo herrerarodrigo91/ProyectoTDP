@@ -72,10 +72,10 @@ select{
 .form-style-1 input[type=email]:focus,
 .form-style-1 textarea:focus, 
 .form-style-1 select:focus{
-    -moz-box-shadow: 0 0 8px #88D5E9;
-    -webkit-box-shadow: 0 0 8px #88D5E9;
-    box-shadow: 0 0 8px #88D5E9;
-    border: 1px solid #88D5E9;
+    -moz-box-shadow: 0 0 20px #c92020;
+    -webkit-box-shadow: 0 0 20px #c92020;
+    box-shadow: 0 0 20px #c92020;
+    border: 1px solid #c92020;
 }
 .form-style-1 .field-divided{
     width: 49%;
@@ -91,10 +91,13 @@ select{
     height: 100px;
 }
 .form-style-1 input[type=submit], .form-style-1 input[type=button],.div-img .ver{
-    background: #4B99AD;
+    background: #c92020;
     padding: 8px 15px 8px 15px;
-    border: none;
+    margin-top:3%; 
     color: #fff;
+    -webkit-border-radius: 29px;
+  -moz-border-radius: 29px;
+  border-radius: 29px;
     
 }
 .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button], .div-img .ver:hover{
@@ -127,7 +130,7 @@ top: 111px ;
     
     
  
-  position: relative;
+  position: static;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -135,14 +138,17 @@ top: 111px ;
 
 }
 .div-img {
+      
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 .div-img .img {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+    
+    
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -159,6 +165,7 @@ top: 111px ;
 }
 .div-img .text {
   font-family: 'Open Sans';
+  color:gainsboro;
   padding-top: 5px;
   display: block;
   text-align: center;
@@ -172,6 +179,12 @@ top: 111px ;
   transition: transfom opacity 1.5s;
 }
 .div-img:hover .img {
+    
+    -moz-box-shadow: 0 0 12px #ffffff;
+    -webkit-box-shadow: 0 0 12px #ffffff;
+    box-shadow: 0 0 12px #ffffff;
+   
+    
   transform: scale(0.8);
   -ms-transform: scale(0.8);
   -moz-transform: scale(0.8);
