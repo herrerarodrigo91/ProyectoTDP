@@ -22,7 +22,7 @@
         <br/>
         <s:form action="cargar"  enctype="multipart/form-data">
             
-            <s:textfield name="nombre" label="Nombre" placeholder="ingrese un nombre..." type="text" requiredLabel="true" required="true"/>
+            <s:textfield name="nombre" label="Nombre" placeholder="ingrese un nombre..." type="text" maxlength="23" requiredLabel="true" required="true" />
             <s:textfield name="calificacion" label="Calificacion" required="true" placeholder="ingrese su calificacion..." requiredLabel="true" type="number" min="0" max="10" />
             <s:textarea name="descripcion" label="Descripcion" placeholder="describa su entidad" cols="50" rows="10"/>
             <s:file name="imagen" label="imagen" />

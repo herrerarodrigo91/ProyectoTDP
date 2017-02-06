@@ -18,18 +18,24 @@
     <body>
         <h1>PROYECTO TECNOLOGIA DE PROGRAMACION 2016</h1>
         <s:if test="modoAdmin">
-            modo administrador
-            <s:a action="admin">entrar</s:a>
-            <s:a action="logout">salir</s:a>
+            <div class="containerAdmin">
+                <img src="iconoAdmin.png"/>
+                <s:a action="admin"><button class="ver">entrar</button></s:a>
+                <s:a action="logout"><button class="ver">salir</button></s:a>
+            </div>
+            
+            
         </s:if>
         <s:else>
-            <div class="divForm">
+            
             <s:form action="admin" theme="simple" cssClass="form-style-1">
+            <div class="divForm">    
             <s:textfield name="user" placeholder="admin" required="true"/>
             <s:password name="password" placeholder="password" required="true"/>
             <s:submit value="atroden"/>
+            </div> 
             </s:form>
-            </div>     
+                
         </s:else>
             <div class="container">
         <ul>    
